@@ -1,0 +1,1583 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PHP API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#installation" class="toc-h1 toc-link" data-title="installation">Installation</a>
+          </li>
+          <li>
+            <a href="#simple-start" class="toc-h1 toc-link" data-title="simple-start">Simple start</a>
+          </li>
+          <li>
+            <a href="#checkout" class="toc-h1 toc-link" data-title="checkout">Checkout</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#payment-url-host-to-host" class="toc-h2 toc-link" data-title="payment-url-host-to-host">Payment url (host-to-host)</a>
+                  </li>
+                  <li>
+                    <a href="#payment-form" class="toc-h2 toc-link" data-title="payment-form">Payment form</a>
+                  </li>
+                  <li>
+                    <a href="#payment-token-host-to-host" class="toc-h2 toc-link" data-title="payment-token-host-to-host">Payment token (host-to-host)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#order" class="toc-h1 toc-link" data-title="order">Order</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#status" class="toc-h2 toc-link" data-title="status">Status</a>
+                  </li>
+                  <li>
+                    <a href="#transaction-list" class="toc-h2 toc-link" data-title="transaction-list">Transaction List</a>
+                  </li>
+                  <li>
+                    <a href="#refund-payment" class="toc-h2 toc-link" data-title="refund-payment">Refund payment</a>
+                  </li>
+                  <li>
+                    <a href="#capture-order" class="toc-h2 toc-link" data-title="capture-order">Capture order</a>
+                  </li>
+                  <li>
+                    <a href="#get-atol-logs" class="toc-h2 toc-link" data-title="get-atol-logs">Get Atol logs</a>
+                  </li>
+                  <li>
+                    <a href="#settlement" class="toc-h2 toc-link" data-title="settlement">Settlement</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#p2p-card-credit" class="toc-h1 toc-link" data-title="p2p-card-credit">P2P card credit</a>
+          </li>
+          <li>
+            <a href="#payments" class="toc-h1 toc-link" data-title="payments">Payments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#payment-reports" class="toc-h2 toc-link" data-title="payment-reports">Payment reports</a>
+                  </li>
+                  <li>
+                    <a href="#payment-using-card-token" class="toc-h2 toc-link" data-title="payment-using-card-token">Payment using card token</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#subscription" class="toc-h1 toc-link" data-title="subscription">Subscription</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#subscription-url" class="toc-h2 toc-link" data-title="subscription-url">Subscription url</a>
+                  </li>
+                  <li>
+                    <a href="#subscription-token" class="toc-h2 toc-link" data-title="subscription-token">Subscription token</a>
+                  </li>
+                  <li>
+                    <a href="#subscription-stop" class="toc-h2 toc-link" data-title="subscription-stop">Subscription stop</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pcidss-accept-purchase" class="toc-h1 toc-link" data-title="pcidss-accept-purchase">PCIDSS Accept purchase</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#step-one" class="toc-h2 toc-link" data-title="step-one">Step One</a>
+                  </li>
+                  <li>
+                    <a href="#step-two" class="toc-h2 toc-link" data-title="step-two">Step Two</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#card-verification" class="toc-h1 toc-link" data-title="card-verification">Card verification</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#payment-card-verification-url" class="toc-h2 toc-link" data-title="payment-card-verification-url">Payment card verification url</a>
+                  </li>
+                  <li>
+                    <a href="#payment-verification-form" class="toc-h2 toc-link" data-title="payment-verification-form">Payment verification form</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#result" class="toc-h1 toc-link" data-title="result">Result</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#server-callback-url" class="toc-h2 toc-link" data-title="server-callback-url">Server callback url</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/flittpayments/'>GitHub Org</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>The CloudIPSP PHP SDK is an open source library through which your PHP application can easily interact with the API. That allows you to accept payment by Visa/MasterCard cards on your website. Simply generating payment url, token, form.</p>
+<h1 id='installation'>Installation</h1>
+<ol>
+<li>You can install via Composer.</li>
+</ol>
+
+<blockquote>
+<p>1.Composer Install</p>
+</blockquote>
+<pre class="highlight plaintext"><code>composer require flittpayments/php-sdk
+</code></pre>
+<ol>
+<li>To install without composer, just download the latest release. Then include manual auto loader to your project.</li>
+</ol>
+
+<blockquote>
+<p>2.Manual installation</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">'/path-to-sdk/autoload.php'</span><span class="p">;</span>
+</code></pre><h1 id='simple-start'>Simple start</h1>
+<blockquote>
+<p>Minimal startup example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+<span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+    <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1111</span>
+<span class="p">];</span>
+<span class="nx">\Flitt\Checkout</span><span class="o">::</span><span class="na">url</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">toCheckout</span><span class="p">();</span>
+</code></pre>
+<p><strong>Minimal configuration:</strong></p>
+
+<ul>
+<li><code>&#39;setMerchantId&#39;</code> - Checkout Merchant ID from provider merchant portal.</li>
+<li><code>&#39;setSecretKey&#39;</code> - Merchant secret key, if operation is credit you need to set <code>&#39;setCreditKey&#39;</code></li>
+</ul>
+
+<p><strong>Full configuration:</strong></p>
+
+<ul>
+<li><code>&#39;setMerchantId&#39;</code> - Checkout Merchant ID from provider merchant portal.</li>
+<li><code>&#39;setSecretKey&#39;</code> - Merchant secret key.</li>
+<li><code>&#39;setCreditKey&#39;</code>- Merchant credit key.</li>
+<li><code>&#39;setApiVersion&#39;</code> - Set api protocol version. Allowed [&#39;1.0&#39;, &#39;2.0&#39;].</li>
+<li><code>&#39;setApiUrl&#39;</code> - Set api endpoint.</li>
+<li><code>&#39;setRequestType&#39;</code> - Set request type. Allowed [&#39;json&#39;, &#39;xml&#39;, &#39;form&#39;].</li>
+<li><code>&#39;setHttpClient&#39;</code> - Set http client. Allowed HttpCurl, HttpGuzzle.</li>
+</ul>
+
+<aside class="notice">
+<p class="nothing">
+Protocol 2.0 allowed only json type. <br/>
+The response is always returned in request context in the same content-type. So if a request is sent in JSON, response will be sent in JSON format too.</p>
+</aside>
+<h1 id='checkout'>Checkout</h1><h2 id='payment-url-host-to-host'>Payment url (host-to-host)</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'order_desc'</span> <span class="o">=&gt;</span> <span class="s1">'tests SDK'</span><span class="p">,</span>
+        <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+        <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s1">'response_url'</span> <span class="o">=&gt;</span> <span class="s1">'http://site.com/responseurl'</span><span class="p">,</span>
+        <span class="s1">'server_callback_url'</span> <span class="o">=&gt;</span> <span class="s1">'http://site.com/callbackurl'</span><span class="p">,</span>
+        <span class="s1">'sender_email'</span> <span class="o">=&gt;</span> <span class="s1">'test@example.com'</span><span class="p">,</span>
+        <span class="s1">'lang'</span> <span class="o">=&gt;</span> <span class="s1">'ru'</span><span class="p">,</span>
+        <span class="s1">'product_id'</span> <span class="o">=&gt;</span> <span class="s1">'some_product_id'</span><span class="p">,</span>
+        <span class="s1">'lifetime'</span> <span class="o">=&gt;</span> <span class="mi">36000</span><span class="p">,</span>
+        <span class="s1">'merchant_data'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">'custom_data1'</span> <span class="o">=&gt;</span> <span class="s1">'Some string'</span><span class="p">,</span>
+            <span class="s1">'custom_data2'</span> <span class="o">=&gt;</span> <span class="s1">'00000000000'</span><span class="p">,</span>
+            <span class="s1">'custom_data3'</span> <span class="o">=&gt;</span> <span class="s1">'3!@#$%^&amp;(()_+?"}'</span>
+        <span class="p">)</span>
+    <span class="p">];</span>
+  <span class="nv">$url</span> <span class="o">=</span> <span class="nx">\Flitt\Checkout</span><span class="o">::</span><span class="na">url</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">();</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns checkout url data.</p>
+
+<p><code>(null)</code> <span class="green">toCheckout()</span> — redirect to checkout page.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>order_desc</code></td>
+<td>Order description. Generated by merchant in UTF-8. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without a separator.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL, EUR, USD and others).</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<p class="nothing">
+merchant_data — will be converted to json string.<br/>
+reservation_data — will be converted to json string and encoded base64.<br/>
+Method accepted protocol <b>2.0</b>.<br/>
+Response is always returned in request context in the same content-type. So if request is sent in JSON, response will be sent in JSON format too.
+</p>
+</aside>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>form</li>
+<li>json</li>
+</ul>
+
+<p><strong>All other parameters look in provider documentation.</strong></p>
+<h2 id='payment-form'>Payment form</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'order_desc'</span> <span class="o">=&gt;</span> <span class="s1">'tests SDK'</span><span class="p">,</span>
+        <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+        <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s1">'merchant_data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'custom_data1'</span> <span class="o">=&gt;</span> <span class="s1">'Some string'</span>
+        <span class="p">]</span>
+    <span class="p">];</span>
+  <span class="nv">$form</span> <span class="o">=</span> <span class="nx">\Flitt\Checkout</span><span class="o">::</span><span class="na">form</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</code></pre>
+<p><code>(string)</code> returns payment form as string.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>order_desc</code></td>
+<td>Order description. Generated by merchant in UTF-8. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL,EUR,USD and others).</td>
+</tr>
+</tbody></table>
+
+<p><strong>All other parameters look in provider documentation.</strong></p>
+<h2 id='payment-token-host-to-host'>Payment token (host-to-host)</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'order_desc'</span> <span class="o">=&gt;</span> <span class="s1">'tests SDK'</span><span class="p">,</span>
+        <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+        <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s1">'response_url'</span> <span class="o">=&gt;</span> <span class="s1">'http://site.com/responseurl'</span><span class="p">,</span>
+        <span class="s1">'server_callback_url'</span> <span class="o">=&gt;</span> <span class="s1">'http://site.com/callbackurl'</span><span class="p">,</span>
+        <span class="s1">'sender_email'</span> <span class="o">=&gt;</span> <span class="s1">'test@example.com'</span><span class="p">,</span>
+        <span class="s1">'lang'</span> <span class="o">=&gt;</span> <span class="s1">'ru'</span><span class="p">,</span>
+        <span class="s1">'product_id'</span> <span class="o">=&gt;</span> <span class="s1">'some_product_id'</span><span class="p">,</span>
+        <span class="s1">'lifetime'</span> <span class="o">=&gt;</span> <span class="mi">36000</span><span class="p">,</span>
+        <span class="s1">'merchant_data'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">'custom_data1'</span> <span class="o">=&gt;</span> <span class="s1">'Some string'</span><span class="p">,</span>
+            <span class="s1">'custom_data2'</span> <span class="o">=&gt;</span> <span class="s1">'00000000000'</span><span class="p">,</span>
+            <span class="s1">'custom_data3'</span> <span class="o">=&gt;</span> <span class="s1">'3!@#$%^&amp;(()_+?"}'</span>
+        <span class="p">)</span>
+    <span class="p">];</span>
+  <span class="nv">$token</span> <span class="o">=</span> <span class="nx">\Flitt\Checkout</span><span class="o">::</span><span class="na">token</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">();</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> returns checkout token data.</p>
+
+<p>Required request parameters:</p>
+
+<aside class="notice">
+Look <a href="#payment-url-host-to-host">Payment url</a>
+</aside>
+<h1 id='order'>Order</h1><h2 id='status'>Status</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+    <span class="nv">$dataToGetStatus</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="s1">'123'</span>
+    <span class="p">];</span>
+    <span class="nv">$orderStatus</span> <span class="o">=</span> <span class="nx">\Flitt\Order</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$dataToGetStatus</span><span class="p">);</span>
+    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$orderStatus</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns order info.</p>
+
+<p><code>(bool)</code>  <span class="green">isApproved()</span> — method to check if payment is successful.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID which is generated by merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>form</li>
+<li>xml</li>
+<li>json</li>
+</ul>
+
+<p>Response is always returned in request context in the same content-type. So if request is sent in JSON, response will be sent in JSON format too.</p>
+<h2 id='transaction-list'>Transaction List</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+     <span class="nv">$dataToGetList</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="s1">'1234'</span>
+     <span class="p">];</span>
+     <span class="nv">$listData</span> <span class="o">=</span> <span class="nx">\Flitt\Order</span><span class="o">::</span><span class="na">transactionList</span><span class="p">(</span><span class="nv">$dataToGetList</span><span class="p">);</span>
+     <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$listData</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns transaction list by order.</p>
+
+<p><code>(bool)</code>  <span class="green">isCapturedByList()</span> — method to check if is captured transaction in the data</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID which is generated by merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>form</li>
+<li>xml</li>
+<li>json</li>
+</ul>
+<h2 id='refund-payment'>Refund payment</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+    <span class="nv">$dataToReverse</span> <span class="o">=</span> <span class="p">[</span>
+       <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+       <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+       <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="s1">'1234'</span>
+    <span class="p">];</span>
+    <span class="nv">$refundOrder</span> <span class="o">=</span> <span class="nx">\Flitt\Order</span><span class="o">::</span><span class="na">reverse</span><span class="p">(</span><span class="nv">$dataToReverse</span><span class="p">);</span>
+    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$refundOrder</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns refunded order info.</p>
+
+<p><code>(bool)</code> <span class="green">isReversed()</span> — method to check if refund is success.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID which is generated by merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL,EUR,USD and others).</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>form</li>
+<li>xml</li>
+<li>json</li>
+</ul>
+<h2 id='capture-order'>Capture order</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+     <span class="nv">$dataToCapture</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+        <span class="s1">'amount'</span>   <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="s1">'1234'</span>
+     <span class="p">];</span>
+     <span class="nv">$captureOrder</span> <span class="o">=</span> <span class="nx">\Flitt\Order</span><span class="o">::</span><span class="na">capture</span><span class="p">(</span><span class="nv">$dataToCapture</span><span class="p">);</span>
+     <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$captureOrder</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns captured order info.</p>
+
+<p><code>(bool)</code> <span class="green">isCaptured()</span> — method to check if capture request is true</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID which is generated by merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL,EUR,USD and others).</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>form</li>
+<li>xml</li>
+<li>json</li>
+</ul>
+<h2 id='get-atol-logs'>Get Atol logs</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+     <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="s1">'1234'</span>
+     <span class="p">];</span>
+     <span class="nv">$logs</span> <span class="o">=</span> <span class="nx">\Flitt\Order</span><span class="o">::</span><span class="na">atolLogs</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+     <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$logs</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns atol logs array.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID which is generated by merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>json</li>
+</ul>
+<h2 id='settlement'>Settlement</h2>
+<aside class="notice">
+Allowed only in api version 2.0
+</aside>
+
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+      <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span> <span class="c1">// convert to 10.00$
+</span>      <span class="s1">'order_desc'</span> <span class="o">=&gt;</span> <span class="s1">'tests SDK'</span><span class="p">,</span>
+  <span class="p">];</span>
+  <span class="nv">$receiver</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">[</span>
+          <span class="s1">'requisites'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+              <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">500</span><span class="p">,</span>
+              <span class="s1">'merchant_id'</span> <span class="o">=&gt;</span> <span class="mi">600001</span>
+          <span class="p">],</span>
+          <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'merchant'</span>
+      <span class="p">],</span>
+      <span class="p">[</span>
+          <span class="s1">'requisites'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+              <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">500</span><span class="p">,</span>
+              <span class="s1">'merchant_id'</span> <span class="o">=&gt;</span> <span class="mi">700001</span>
+          <span class="p">],</span>
+          <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'merchant'</span>
+      <span class="p">]</span>
+  <span class="p">];</span>
+  <span class="nv">$data</span><span class="p">[</span><span class="s1">'receiver'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$receiver</span><span class="p">;</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns response data.</p>
+
+<p>Required request parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>order_desc</code></td>
+<td>Order description. Generated by merchant in UTF-8. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL,EUR,USD and others).</td>
+</tr>
+<tr>
+<td><code>receiver</code></td>
+<td>Order cleavage instructions.</td>
+</tr>
+</tbody></table>
+
+<p>Example by scheme 3, you can find in &#39;/examples/Order/settlement_scheme_3.php&#39;</p>
+
+<p>Full documentation you can request support@flitt.com</p>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>json</li>
+</ul>
+<h1 id='p2p-card-credit'>P2P card credit</h1>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+   <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+   <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setCreditKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+   <span class="nv">$TestOrderData</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+      <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="s1">'receiver_card_number'</span> <span class="o">=&gt;</span> <span class="s1">'4444555511116666'</span>
+   <span class="p">];</span>
+   <span class="c1">//Call method to generate order
+</span>   <span class="nv">$orderData</span> <span class="o">=</span> <span class="nx">\Flitt\P2pcredit</span><span class="o">::</span><span class="na">start</span><span class="p">(</span><span class="nv">$TestOrderData</span><span class="p">);</span>
+</code></pre>
+<aside class="warning"><p class="nothing">
+Request must contain additional parameter receiver_card_number or receiver_rectoken<br/>
+You need setup credit key.
+</p></aside>     
+
+<p><code>(array)</code> <span class="green">getData()</span> — returns payment data.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID which is generated by merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL, EUR, USD and others).</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+<tr>
+<td><code>receiver_card_number</code></td>
+<td>Card number.</td>
+</tr>
+<tr>
+<td><code>receiver_rectoken</code></td>
+<td>Card token — token to credit card without transferring full card number.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>form</li>
+<li>json</li>
+</ul>
+<h1 id='payments'>Payments</h1><h2 id='payment-reports'>Payment reports</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nv">$Data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"date_from"</span> <span class="o">=&gt;</span> <span class="nb">date</span><span class="p">(</span><span class="s1">'d.m.Y H:i:s'</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="mi">3600</span><span class="p">),</span>
+        <span class="s2">"date_to"</span> <span class="o">=&gt;</span> <span class="nb">date</span><span class="p">(</span><span class="s1">'d.m.Y H:i:s'</span><span class="p">),</span>
+  <span class="p">];</span>
+  <span class="nv">$reports</span> <span class="o">=</span> <span class="nx">\Flitt\Payment</span><span class="o">::</span><span class="na">reports</span><span class="p">(</span><span class="nv">$Data</span><span class="p">);</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$reports</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+</code></pre>
+<aside class="warning">
+Request date format is 'd.m.Y H:i:s'
+</aside>     
+
+<p><code>(array)</code> <span class="green">getData()</span> — returns payment report data.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>date_from</code></td>
+<td>Start order datetime.</td>
+</tr>
+<tr>
+<td><code>date_to</code></td>
+<td>End order datetime.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+
+<li>json</li>
+</ul>
+<h2 id='payment-using-card-token'>Payment using card token</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nv">$recurringData</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+        <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s1">'rectoken'</span> <span class="o">=&gt;</span> <span class="s1">'token'</span>
+  <span class="p">];</span>
+  <span class="nv">$recurring_order</span> <span class="o">=</span> <span class="nx">Flitt\Payment</span><span class="o">::</span><span class="na">recurring</span><span class="p">(</span><span class="nv">$recurringData</span><span class="p">);</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$recurring_order</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns payment info.</p>
+
+<p><code>(bool)</code> <span class="green">isApproved()</span> — method to check if recurring is successful.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>order_desc</code></td>
+<td>Order description. Generated by merchant in UTF-8. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL, EUR, USD and others).</td>
+</tr>
+<tr>
+<td><code>rectoken</code></td>
+<td>Card token — token to access card funds without cardholder interaction.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+
+<li>json</li>
+<li>form</li>
+</ul>
+<h1 id='subscription'>Subscription</h1><h2 id='subscription-url'>Subscription url</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setApiVersion</span><span class="p">(</span><span class="s1">'2.0'</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+        <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span> <span class="c1">// convert to 10.00$
+</span>        <span class="s1">'recurring_data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'start_time'</span> <span class="o">=&gt;</span> <span class="s1">'2021-12-24'</span><span class="p">,</span>
+            <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="s1">'every'</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="s1">'period'</span> <span class="o">=&gt;</span> <span class="s1">'day'</span><span class="p">,</span>
+            <span class="s1">'state'</span> <span class="o">=&gt;</span> <span class="s1">'y'</span><span class="p">,</span>
+            <span class="s1">'readonly'</span> <span class="o">=&gt;</span> <span class="s1">'y'</span>
+        <span class="p">]</span>
+    <span class="p">];</span>
+  <span class="nv">$url</span> <span class="o">=</span> <span class="nx">\Flitt\Subscription</span><span class="o">::</span><span class="na">url</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">();</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns checkout url.</p>
+
+<p><code>(null)</code> <span class="green">toCheckout()</span> — redirect to checkout page.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>order_desc</code></td>
+<td>Order description. Generated by merchant in UTF-8. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL,EUR,USD and others).</td>
+</tr>
+<tr>
+<td><code>recurring_data</code></td>
+<td>Subscription info.</td>
+</tr>
+<tr>
+<td><code>start_time</code></td>
+<td>Start calendar payment format(&quot;Y-m-d&quot;).</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Subscription amount.</td>
+</tr>
+<tr>
+<td><code>every</code></td>
+<td>Frequency of payments(number).</td>
+</tr>
+<tr>
+<td><code>period</code></td>
+<td>Frequency of payments(&#39;day&#39;,&#39;month&#39;,&#39;week&#39;).</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>Checkout calendar state &quot;y&quot; - enabled.</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td>Checkout calendar readonly.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<p class="nothing">
+merchant_data and recurring_data — will be converted to json string.<br/>
+Method only for protocol <b>2.0</b>.<br/>
+Response is always returned in request context in the same content-type. So if request is sent in JSON, response will be sent in JSON format too.
+</p>
+</aside>
+
+<p>Host-to-host API v2.0 supports the following text formats:</p>
+
+<ul>
+<li>json</li>
+</ul>
+
+<p><strong>All other params look in provider documentation.</strong></p>
+<h2 id='subscription-token'>Subscription token</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setApiVersion</span><span class="p">(</span><span class="s1">'2.0'</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+          <span class="s1">'order_desc'</span> <span class="o">=&gt;</span> <span class="s1">'tests SDK'</span><span class="p">,</span>
+          <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+          <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+          <span class="s1">'merchant_data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+              <span class="s1">'custom_data1'</span> <span class="o">=&gt;</span> <span class="s1">'Some string'</span>
+          <span class="p">],</span>
+           <span class="s1">'recurring_data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                      <span class="s1">'start_time'</span> <span class="o">=&gt;</span> <span class="s1">'2021-12-24'</span><span class="p">,</span>
+                      <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+                      <span class="s1">'every'</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+                      <span class="s1">'period'</span> <span class="o">=&gt;</span> <span class="s1">'day'</span><span class="p">,</span>
+                      <span class="s1">'state'</span> <span class="o">=&gt;</span> <span class="s1">'y'</span><span class="p">,</span>
+                      <span class="s1">'readonly'</span> <span class="o">=&gt;</span> <span class="s1">'y'</span>
+           <span class="p">]</span>
+    <span class="p">];</span>
+  <span class="nv">$token</span> <span class="o">=</span> <span class="nx">\Flitt\Subscription</span><span class="o">::</span><span class="na">token</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+
+</code></pre>
+<p><code>(array)</code> Returns checkout token.</p>
+
+<p>Required request Parameters:</p>
+
+<aside class="notice">
+Look in <a href="#payment-url-host-to-host">Same as in url.</a>
+</aside>
+<h2 id='subscription-stop'>Subscription stop</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setApiVersion</span><span class="p">(</span><span class="s1">'2.0'</span><span class="p">);</span>
+  <span class="nv">$cancel</span> <span class="o">=</span> <span class="nx">Flitt\Subscription</span><span class="o">::</span><span class="na">stop</span><span class="p">(</span><span class="nv">$order_id</span><span class="p">);</span>
+
+</code></pre>
+<p><code>(array)</code> Returns info about calendar status.</p>
+<h1 id='pcidss-accept-purchase'>PCIDSS Accept purchase</h1><h2 id='step-one'>Step One</h2>
+<blockquote>
+<p>Example 3ds card:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+   <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+   <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+   <span class="nv">$TestOrderData</span> <span class="o">=</span> <span class="p">[</span>
+           <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">(),</span>
+           <span class="s1">'card_number'</span> <span class="o">=&gt;</span> <span class="s1">'4444555566661111'</span><span class="p">,</span> <span class="c1">//testing card with 3ds
+</span>           <span class="s1">'cvv2'</span> <span class="o">=&gt;</span> <span class="s1">'333'</span><span class="p">,</span>
+           <span class="s1">'expiry_date'</span> <span class="o">=&gt;</span> <span class="s1">'1232'</span><span class="p">,</span>
+           <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+           <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+           <span class="s1">'client_ip'</span> <span class="o">=&gt;</span> <span class="s1">'127.2.2.1'</span>
+   <span class="p">];</span>
+   <span class="c1">//Call method to generate order
+</span>   <span class="nv">$orderData</span> <span class="o">=</span> <span class="nx">Flitt\Pcidss</span><span class="o">::</span><span class="na">start</span><span class="p">(</span><span class="nv">$TestOrderData</span><span class="p">);</span>
+   <span class="k">if</span><span class="p">(</span><span class="nv">$orderData</span><span class="o">-&gt;</span><span class="na">is3ds</span><span class="p">())</span>
+      <span class="nv">$form</span> <span class="o">=</span> <span class="nx">\Flitt\Pcidss</span><span class="o">::</span><span class="na">get3dsFrom</span><span class="p">(</span><span class="nv">$orderData</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(),</span> <span class="nv">$response_url</span> <span class="o">.</span> <span class="s1">'response_url'</span><span class="p">);</span>
+</code></pre>
+<aside class="warning"><p class="nothing">
+Only for PCIDSS compliant merchants.<br/>
+If card is 3ds a merchant receiving this response must build an HTML form and using it submit customer to acs_url.
+</p></aside>
+
+<p><code>(array)</code> <span class="green">getData()</span> — returns payment data.</p>
+
+<p><code>(bool)</code> <span class="green">is3ds()</span> — check if is 3ds response.</p>
+
+<p><code>(string)</code> <span class="green">get3dsFrom($responseData, &#39;response_url&#39;)</span> — generating form for step two if 3ds response.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID which is generated by merchant.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL, EUR, USD and others).</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+<tr>
+<td><code>card_number</code></td>
+<td>Card number.</td>
+</tr>
+<tr>
+<td><code>cvv2</code></td>
+<td>CVV card code.</td>
+</tr>
+<tr>
+<td><code>expiry_date</code></td>
+<td>Expaire date of card format &#39;MMYY&#39;.</td>
+</tr>
+<tr>
+<td><code>client_ip</code></td>
+<td>Client IP.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>form</li>
+<li>xml</li>
+<li>json</li>
+</ul>
+<h2 id='step-two'>Step Two</h2>
+<blockquote>
+<p>Example 3ds card:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+   <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+   <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">))</span> <span class="p">{</span>
+       <span class="nv">$dataTo3dsSubmit</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">;</span>
+       <span class="nv">$dataTo3dsSubmit</span><span class="p">[</span><span class="s1">'order_id'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'order_id_from_prev_step'</span><span class="p">;</span> <span class="c1">// adding order id from prev step
+</span>       <span class="nv">$orderData</span> <span class="o">=</span> <span class="nx">\Flitt\Pcidss</span><span class="o">::</span><span class="na">submit</span><span class="p">(</span><span class="nv">$dataTo3dsSubmit</span><span class="p">);</span>
+   <span class="p">}</span>
+</code></pre>
+<p>Submitting result generated form from step one</p>
+
+<p><code>(array)</code> <span class="green">getData()</span> — returns payment data.</p>
+
+<p>Host-to-host API supports the following text formats</p>
+
+<ul>
+<li>form</li>
+<li>xml</li>
+<li>json</li>
+</ul>
+<h1 id='card-verification'>Card verification</h1><h2 id='payment-card-verification-url'>Payment card verification url</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'verification_type'</span> <span class="o">=&gt;</span> <span class="s1">'code'</span><span class="p">,</span> <span class="c1">//default - amount
+</span>        <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+        <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">100</span>
+  <span class="p">];</span>
+  <span class="nv">$url</span> <span class="o">=</span> <span class="nx">\Flitt\Verification</span><span class="o">::</span><span class="na">url</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">();</span>
+</code></pre>
+<p>The request must contain additional parameter verification and verification_type</p>
+
+<p><code>(array)</code> <span class="green">getData()</span> — returns verification url data.</p>
+
+<p><code>(null)</code> <span class="green">toCheckout()</span> — redirect to verification checkout page.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>order_desc</code></td>
+<td>Order description. Generated by merchant in UTF-8. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>verification</code></td>
+<td>If Y order will be automatically reversed by provider after successful approval.</td>
+</tr>
+<tr>
+<td><code>verification_type</code></td>
+<td>&#39;code&#39; or &#39;amount&#39;. Default is amount.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL, EUR, USD and others).</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+</tbody></table>
+
+<p>Host-to-host API supports the following text formats:</p>
+
+<ul>
+<li>form</li>
+<li>json</li>
+</ul>
+
+<p><strong>All other params look in provider documentation.</strong></p>
+<h2 id='payment-verification-form'>Payment verification form</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+  <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setMerchantId</span><span class="p">(</span><span class="mi">1549901</span><span class="p">);</span>
+  <span class="nx">\Flitt\Configuration</span><span class="o">::</span><span class="na">setSecretKey</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+          <span class="s1">'verification_type'</span> <span class="o">=&gt;</span> <span class="s1">'code'</span><span class="p">,</span> <span class="c1">//default - amount
+</span>          <span class="s1">'currency'</span> <span class="o">=&gt;</span> <span class="s1">'GEL'</span><span class="p">,</span>
+          <span class="s1">'amount'</span> <span class="o">=&gt;</span> <span class="mi">100</span>
+  <span class="p">];</span>
+  <span class="nv">$form</span> <span class="o">=</span> <span class="nx">\Flitt\Verification</span><span class="o">::</span><span class="na">form</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</code></pre>
+<p><code>(string)</code> returns payment form as string.</p>
+
+<p>Required request Parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>Order ID. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>merchant_id</code></td>
+<td>Merchant unique ID.</td>
+</tr>
+<tr>
+<td><code>order_desc</code></td>
+<td>Order description. Generated by merchant in UTF-8. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>Order signature. Required to verify merchant request consistency and authenticity. Can be generated by SDK.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Order amount in cents without separator.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Order currency(GEL,EUR,USD and others).</td>
+</tr>
+<tr>
+<td><code>verification</code></td>
+<td>If Y order will be automatically reversed by FONDY after successful approval.</td>
+</tr>
+<tr>
+<td><code>verification_type</code></td>
+<td>&#39;code&#39; or &#39;amount&#39;. Default is amount.</td>
+</tr>
+</tbody></table>
+
+<p><strong>All other params look in provider documentation.</strong></p>
+<h1 id='result'>Result</h1><h2 id='server-callback-url'>Server callback url</h2>
+<blockquote>
+<p>Example handling result</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="sd">/**
+ * Setting up testing configuration
+ * All testing details you can find here https://docs.flitt.com/api/testing/
+ */</span>
+<span class="k">require_once</span> <span class="s1">'configuration.php'</span><span class="p">;</span>
+<span class="k">require_once</span> <span class="nx">SDK_ROOTPATH</span> <span class="o">.</span> <span class="s1">'/../vendor/autoload.php'</span><span class="p">;</span>
+<span class="sd">/**
+ * Getting payment result (server_callback_url)
+ * Signature validation example server_callback_url
+ * you can get params by yourself, or sdk can got it
+ */</span>
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$result</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Flitt\Result\Result</span><span class="p">();</span>
+    <span class="sd">/**
+      * or you can build with data parsed by yourself 
+      * $result = new \Flitt\Result\Result($_POST, $secretKey, $requestType, true);
+    */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">())</span>
+        <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+    <span class="k">else</span>
+        <span class="k">die</span><span class="p">(</span><span class="s1">'No data'</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"Fail: "</span> <span class="o">.</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+    <span class="p">}</span>
+</code></pre>
+<p><code>(array)</code> <span class="green">getData()</span> — returns callback data.</p>
+
+<p><code>(bool)</code> <span class="green">isValid()</span> — returns if callback valid (checking signature).</p>
+
+<p><code>(bool)</code> <span class="green">isApprove()</span> — returns payment successfully include (checking signature).</p>
+
+<p>Result is always returned in request context in the same content-type. So if request is sent in JSON, response will be sent in JSON format too. Response for such request will be interim and will contain URL where customer must be redirected to payment page.</p>
+
+<p>Sending request in interaction scheme A does not assume getting response in request context. Final response will be returned to merchant URL, specified in response_url and server_callback_url Parameters.</p>
+<h1 id='errors'>Errors</h1>
+<p>The basic exception list:</p>
+
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Merchant ID is empty or invalid.</code></td>
+<td>Set the <a href="#introduction">merchant id</a> or check if it numeric.</td>
+</tr>
+<tr>
+<td><code>Secret Key is empty or invalid.</code></td>
+<td>Set the <a href="#introduction">secret key</a> or check if it string.</td>
+</tr>
+<tr>
+<td><code>Required param &quot;param_name&quot; is empty</code></td>
+<td>Some api required parameter is empty. Watch docs.</td>
+</tr>
+<tr>
+<td><code>Required param &quot;param_name&quot; is missing</code></td>
+<td>Some api required parameter is missing. Watch docs.</td>
+</tr>
+<tr>
+<td><code>Invalid signature signature....response_signature_string......</code></td>
+<td>Check data, some parameters not accepted by provider api.</td>
+</tr>
+<tr>
+<td><code>Request is incorrect. Request ID: 3wq8EvammIxih</code></td>
+<td>Invalid data or method not allowed for merchant.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
